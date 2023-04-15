@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="stop">stop</button>
+    <button id="start">start</button>
+    <h1 id="time"></h1>
+</body>
+<script>
+    let _times = setInterval(m , 1000)
+
+    function m(){
+        let x = new Date().toLocaleTimeString()
+        document.getElementById('time').innerHTML=x
+    }
+    document.getElementById('stop').addEventListener('click', function(){
+        clearInterval( _times)
+    })
+    document.getElementById('start').addEventListener('click', function(){
+        _times= setInterval(m , 1000)
+    })
+</script>
+</html>
